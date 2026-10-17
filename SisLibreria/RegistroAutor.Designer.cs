@@ -33,10 +33,12 @@
             TxtAutor = new TextBox();
             label3 = new Label();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             btnCerrar = new Button();
             label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -58,6 +60,7 @@
             btnRegistrarAtor.FlatStyle = FlatStyle.Flat;
             btnRegistrarAtor.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrarAtor.ForeColor = Color.White;
+            btnRegistrarAtor.ImageAlign = ContentAlignment.MiddleRight;
             btnRegistrarAtor.Location = new Point(366, 98);
             btnRegistrarAtor.Name = "btnRegistrarAtor";
             btnRegistrarAtor.Size = new Size(144, 33);
@@ -87,12 +90,24 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.FromArgb(70, 103, 142);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnCerrar);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(0, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(604, 56);
+            panel2.Size = new Size(604, 50);
             panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.libro;
+            pictureBox1.Location = new Point(16, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(29, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
             // 
             // btnCerrar
             // 
@@ -100,7 +115,7 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrar.ForeColor = Color.White;
-            btnCerrar.Location = new Point(560, 12);
+            btnCerrar.Location = new Point(560, 9);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(31, 31);
             btnCerrar.TabIndex = 14;
@@ -113,7 +128,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 18);
+            label2.Location = new Point(51, 12);
             label2.Name = "label2";
             label2.Size = new Size(142, 29);
             label2.TabIndex = 1;
@@ -132,6 +147,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -144,5 +160,6 @@
         private Label label3;
         private Button btnRegistrarAtor;
         private Button btnCerrar;
+        private PictureBox pictureBox1;
     }
 }

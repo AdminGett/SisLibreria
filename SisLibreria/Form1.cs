@@ -60,7 +60,7 @@ namespace SisLibreria
             if (!string.IsNullOrWhiteSpace(TxtBusqueda.Text))
             {
 
-               //DataTable estatus = repo.EjecutarSP("tb_busqued_R_Libro", Busqueda);
+                //DataTable estatus = repo.EjecutarSP("tb_busqued_R_Libro", Busqueda);
                 using (ComponenteRegistroDB BusquedaProcesada = new ComponenteRegistroDB())
                 {
                     DataTable estatus = BusquedaProcesada.RegistrosLiterarios(Busqueda);
@@ -92,7 +92,7 @@ namespace SisLibreria
                     }
 
                 }
-                   
+
 
 
                 //Debug.WriteLine($"Texto abuscar:{TxtBusqueda.Text}");
@@ -129,6 +129,12 @@ namespace SisLibreria
         {
 
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

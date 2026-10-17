@@ -55,7 +55,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(99, 42);
+            button2.Location = new Point(104, 102);
             button2.Name = "button2";
             button2.Size = new Size(301, 59);
             button2.TabIndex = 5;
@@ -69,7 +69,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(99, 156);
+            button1.Location = new Point(104, 216);
             button1.Name = "button1";
             button1.Size = new Size(301, 59);
             button1.TabIndex = 6;
@@ -83,7 +83,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(99, 263);
+            button3.Location = new Point(104, 323);
             button3.Name = "button3";
             button3.Size = new Size(301, 59);
             button3.TabIndex = 7;
@@ -94,12 +94,13 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(78, 113, 156);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
-            panel1.Location = new Point(887, 101);
+            panel1.Location = new Point(942, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(507, 392);
+            panel1.Size = new Size(491, 590);
             panel1.TabIndex = 8;
             // 
             // Inicio

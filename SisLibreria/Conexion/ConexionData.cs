@@ -9,7 +9,7 @@ namespace SisLibreria.Conexion
     public class ConexionData
     {
         //MySqlConnection cn = new MySqlConnection();
-
+        // "100.117.188.127"; === Ip de puente fuera de red 
         static string host = "192.168.101.102";
         static string db = "SisLibreria";
         static string user = "robin";

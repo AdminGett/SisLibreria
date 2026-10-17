@@ -65,7 +65,7 @@ namespace SisLibreria
                 try
                 {
                     int Registro = newRegistro.GuardarLibro(Titulo, Autor, Genero, Costo, Reparacion);
-                    if(Registro == 1)
+                    if (Registro == 1)
                     {
                         MessageBox.Show("Ya se encuentra registrado el libro", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -93,7 +93,7 @@ namespace SisLibreria
                     DataTable dtAutor = repo.BuscaAutor();
 
                     DataRow fila = dtAutor.NewRow();
-                    fila["Id"] = 0; 
+                    fila["Id"] = 0;
                     fila["Nombre"] = "Seleccionar...";
                     dtAutor.Rows.InsertAt(fila, 0);
 
@@ -145,6 +145,12 @@ namespace SisLibreria
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

@@ -33,6 +33,22 @@ namespace SisLibreria.Componentes.DB
         {
             return repo.EjecutarSP<int>("tb_busqueda_I_Autor", Autor);
         }
+        public int RegistroGenero(string Genreo)
+        {
+            return repo.EjecutarSP<int>("tb_busqueda_I_Genero", Genreo);
+        }
+        public DataTable BuscaLibroVenta(string Busqueda)
+        {
+            return repo.EjecutarSP<DataTable>("tb_busqued_R_LibroVenta", Busqueda);
+        }
+        public DataTable NumeroTicket()
+        {
+            return repo.EjecutarSP<DataTable>("tb_Libreria_R_NumeroTicket");
+        }
+        public int NuevaVenta(string venta)
+        {
+            return repo.EjecutarSP<int>("tb_Libreria_Venta", venta);
+        }
         public void Dispose()
         {
             GC.SuppressFinalize(this);

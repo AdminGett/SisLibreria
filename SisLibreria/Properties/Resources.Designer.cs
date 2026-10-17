@@ -63,6 +63,16 @@ namespace SisLibreria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar {
+            get {
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gemini_Generated_Image_mevblymevblymevb_removebg_previewcopia {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_mevblymevblymevb-removebg-previewcopia", resourceCulture);
@@ -76,6 +86,16 @@ namespace SisLibreria.Properties {
         internal static System.Drawing.Bitmap informacion {
             get {
                 object obj = ResourceManager.GetObject("informacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap informacion1 {
+            get {
+                object obj = ResourceManager.GetObject("informacion1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

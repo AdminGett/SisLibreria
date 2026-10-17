@@ -42,8 +42,11 @@
             panel3 = new Panel();
             label2 = new Label();
             TxtLBucar = new Label();
+            pictureBox1 = new PictureBox();
+            btnCerrar = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -63,7 +66,7 @@
             panel1.Controls.Add(TxtLBucar);
             panel1.Location = new Point(-2, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1374, 359);
+            panel1.Size = new Size(932, 359);
             panel1.TabIndex = 0;
             // 
             // TxtAutorLibro
@@ -131,7 +134,7 @@
             TxtPrecio.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtPrecio.Location = new Point(613, 104);
             TxtPrecio.Name = "TxtPrecio";
-            TxtPrecio.Size = new Size(101, 27);
+            TxtPrecio.Size = new Size(115, 27);
             TxtPrecio.TabIndex = 10;
             TxtPrecio.KeyPress += TxtPrecio_KeyPress;
             // 
@@ -159,10 +162,13 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(70, 103, 142);
+            panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label2);
+            panel3.Controls.Add(btnCerrar);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1371, 46);
+            panel3.Size = new Size(929, 46);
             panel3.TabIndex = 5;
             // 
             // label2
@@ -170,7 +176,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(13, 8);
+            label2.Location = new Point(50, 9);
             label2.Name = "label2";
             label2.Size = new Size(140, 29);
             label2.TabIndex = 0;
@@ -187,12 +193,37 @@
             TxtLBucar.TabIndex = 2;
             TxtLBucar.Text = "Genero Literario:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.libro;
+            pictureBox1.Location = new Point(15, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(29, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.Red;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCerrar.ForeColor = Color.White;
+            btnCerrar.Location = new Point(870, 9);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(31, 31);
+            btnCerrar.TabIndex = 18;
+            btnCerrar.Text = "X";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
             // RegistroLibro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1372, 354);
+            ClientSize = new Size(928, 354);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegistroLibro";
             Load += RegistroLibro_Load;
@@ -200,6 +231,7 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -222,5 +254,7 @@
         private CheckBox CkxRepacionLibro;
         private ComboBox TxtAutorLibro;
         private TextBox TxtTitulo;
+        private PictureBox pictureBox1;
+        private Button btnCerrar;
     }
 }
