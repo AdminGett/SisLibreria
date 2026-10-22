@@ -46,17 +46,14 @@
             pictureBox1 = new PictureBox();
             btnCerrar = new Button();
             label1 = new Label();
-            pblCobro = new Panel();
-            lblVuelto = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            txtMonetario = new TextBox();
             pnlAbono = new Panel();
+            lblCambioAbono = new Label();
+            label15 = new Label();
             lblTicket = new Label();
             label6 = new Label();
-            textBox3 = new TextBox();
+            TxtResibeAbono = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            TxtNombre = new TextBox();
             label4 = new Label();
             pnlApartados = new Panel();
             label11 = new Label();
@@ -65,13 +62,18 @@
             label8 = new Label();
             label9 = new Label();
             textBox6 = new TextBox();
+            pblCobro = new Panel();
+            lblVuelto = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            txtMonetario = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtVentas).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pblCobro.SuspendLayout();
             pnlAbono.SuspendLayout();
             pnlApartados.SuspendLayout();
+            pblCobro.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -91,9 +93,9 @@
             panel1.Controls.Add(TxtBusqueda);
             panel1.Controls.Add(dtVentas);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(pblCobro);
             panel1.Controls.Add(pnlAbono);
             panel1.Controls.Add(pnlApartados);
+            panel1.Controls.Add(pblCobro);
             panel1.Location = new Point(1, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1398, 565);
@@ -136,6 +138,7 @@
             cbxAbono.TabIndex = 11;
             cbxAbono.Text = "Abono";
             cbxAbono.UseVisualStyleBackColor = true;
+            cbxAbono.Visible = false;
             cbxAbono.CheckedChanged += cbxAbono_CheckedChanged;
             // 
             // lbPresioNeto
@@ -308,73 +311,44 @@
             label1.TabIndex = 0;
             label1.Text = "Venta";
             // 
-            // pblCobro
-            // 
-            pblCobro.BackColor = Color.FromArgb(72, 106, 147);
-            pblCobro.Controls.Add(lblVuelto);
-            pblCobro.Controls.Add(label13);
-            pblCobro.Controls.Add(label14);
-            pblCobro.Controls.Add(txtMonetario);
-            pblCobro.Location = new Point(1083, 213);
-            pblCobro.Name = "pblCobro";
-            pblCobro.Size = new Size(299, 173);
-            pblCobro.TabIndex = 18;
-            // 
-            // lblVuelto
-            // 
-            lblVuelto.AutoSize = true;
-            lblVuelto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblVuelto.ForeColor = Color.White;
-            lblVuelto.Location = new Point(83, 95);
-            lblVuelto.Name = "lblVuelto";
-            lblVuelto.Size = new Size(18, 20);
-            lblVuelto.TabIndex = 16;
-            lblVuelto.Text = "0";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(6, 95);
-            label13.Name = "label13";
-            label13.Size = new Size(79, 20);
-            label13.TabIndex = 15;
-            label13.Text = "Cambio: $";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(6, 21);
-            label14.Name = "label14";
-            label14.Size = new Size(59, 20);
-            label14.TabIndex = 13;
-            label14.Text = "Recibe:";
-            // 
-            // txtMonetario
-            // 
-            txtMonetario.Location = new Point(6, 47);
-            txtMonetario.Name = "txtMonetario";
-            txtMonetario.Size = new Size(278, 27);
-            txtMonetario.TabIndex = 12;
-            txtMonetario.TextChanged += textBox4_TextChanged;
-            // 
             // pnlAbono
             // 
             pnlAbono.BackColor = Color.FromArgb(72, 106, 147);
+            pnlAbono.Controls.Add(lblCambioAbono);
+            pnlAbono.Controls.Add(label15);
             pnlAbono.Controls.Add(lblTicket);
             pnlAbono.Controls.Add(label6);
-            pnlAbono.Controls.Add(textBox3);
+            pnlAbono.Controls.Add(TxtResibeAbono);
             pnlAbono.Controls.Add(label5);
-            pnlAbono.Controls.Add(textBox2);
+            pnlAbono.Controls.Add(TxtNombre);
             pnlAbono.Controls.Add(label4);
             pnlAbono.Location = new Point(1083, 213);
             pnlAbono.Name = "pnlAbono";
             pnlAbono.Size = new Size(299, 173);
             pnlAbono.TabIndex = 10;
             pnlAbono.Visible = false;
+            // 
+            // lblCambioAbono
+            // 
+            lblCambioAbono.AutoSize = true;
+            lblCambioAbono.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCambioAbono.ForeColor = Color.White;
+            lblCambioAbono.Location = new Point(144, 142);
+            lblCambioAbono.Name = "lblCambioAbono";
+            lblCambioAbono.Size = new Size(18, 20);
+            lblCambioAbono.TabIndex = 19;
+            lblCambioAbono.Text = "0";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(6, 141);
+            label15.Name = "label15";
+            label15.Size = new Size(138, 20);
+            label15.TabIndex = 18;
+            label15.Text = "Saldo pendiente: $";
             // 
             // lblTicket
             // 
@@ -393,36 +367,37 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(6, 121);
+            label6.Location = new Point(6, 103);
             label6.Name = "label6";
             label6.Size = new Size(60, 20);
             label6.TabIndex = 15;
             label6.Text = "Abono:";
             // 
-            // textBox3
+            // TxtResibeAbono
             // 
-            textBox3.Location = new Point(87, 118);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(190, 27);
-            textBox3.TabIndex = 14;
+            TxtResibeAbono.Location = new Point(87, 100);
+            TxtResibeAbono.Name = "TxtResibeAbono";
+            TxtResibeAbono.Size = new Size(190, 27);
+            TxtResibeAbono.TabIndex = 14;
+            TxtResibeAbono.TextChanged += TxtResibeAbono_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(6, 75);
+            label5.Location = new Point(6, 57);
             label5.Name = "label5";
             label5.Size = new Size(71, 20);
             label5.TabIndex = 13;
             label5.Text = "Nombre:";
             // 
-            // textBox2
+            // TxtNombre
             // 
-            textBox2.Location = new Point(87, 72);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(190, 27);
-            textBox2.TabIndex = 12;
+            TxtNombre.Location = new Point(87, 54);
+            TxtNombre.Name = "TxtNombre";
+            TxtNombre.Size = new Size(190, 27);
+            TxtNombre.TabIndex = 12;
             // 
             // label4
             // 
@@ -512,6 +487,59 @@
             textBox6.Size = new Size(190, 27);
             textBox6.TabIndex = 3;
             // 
+            // pblCobro
+            // 
+            pblCobro.BackColor = Color.FromArgb(72, 106, 147);
+            pblCobro.Controls.Add(lblVuelto);
+            pblCobro.Controls.Add(label13);
+            pblCobro.Controls.Add(label14);
+            pblCobro.Controls.Add(txtMonetario);
+            pblCobro.Location = new Point(1083, 213);
+            pblCobro.Name = "pblCobro";
+            pblCobro.Size = new Size(299, 173);
+            pblCobro.TabIndex = 18;
+            // 
+            // lblVuelto
+            // 
+            lblVuelto.AutoSize = true;
+            lblVuelto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblVuelto.ForeColor = Color.White;
+            lblVuelto.Location = new Point(83, 95);
+            lblVuelto.Name = "lblVuelto";
+            lblVuelto.Size = new Size(18, 20);
+            lblVuelto.TabIndex = 16;
+            lblVuelto.Text = "0";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(6, 95);
+            label13.Name = "label13";
+            label13.Size = new Size(79, 20);
+            label13.TabIndex = 15;
+            label13.Text = "Cambio: $";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(6, 21);
+            label14.Name = "label14";
+            label14.Size = new Size(59, 20);
+            label14.TabIndex = 13;
+            label14.Text = "Recibe:";
+            // 
+            // txtMonetario
+            // 
+            txtMonetario.Location = new Point(6, 47);
+            txtMonetario.Name = "txtMonetario";
+            txtMonetario.Size = new Size(278, 27);
+            txtMonetario.TabIndex = 12;
+            txtMonetario.TextChanged += textBox4_TextChanged;
+            // 
             // VentaLibro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -528,12 +556,12 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            pblCobro.ResumeLayout(false);
-            pblCobro.PerformLayout();
             pnlAbono.ResumeLayout(false);
             pnlAbono.PerformLayout();
             pnlApartados.ResumeLayout(false);
             pnlApartados.PerformLayout();
+            pblCobro.ResumeLayout(false);
+            pblCobro.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -558,7 +586,7 @@
         private Label label5;
         private TextBox textBox2;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox TxtResibeAbono;
         private CheckBox cbxApartar;
         private Panel pnlApartados;
         private Label label11;
@@ -574,5 +602,8 @@
         private Label label14;
         private TextBox txtMonetario;
         private Label lblEliminarElemento;
+        private TextBox TxtNombre;
+        private Label lblCambioAbono;
+        private Label label15;
     }
 }

@@ -34,6 +34,7 @@
             button1 = new Button();
             button3 = new Button();
             panel1 = new Panel();
+            btnAbonos = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -83,7 +84,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(104, 323);
+            button3.Location = new Point(104, 427);
             button3.Name = "button3";
             button3.Size = new Size(301, 59);
             button3.TabIndex = 7;
@@ -95,6 +96,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(78, 113, 156);
+            panel1.Controls.Add(btnAbonos);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
@@ -102,6 +104,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(491, 590);
             panel1.TabIndex = 8;
+            // 
+            // btnAbonos
+            // 
+            btnAbonos.BackColor = Color.FromArgb(84, 122, 169);
+            btnAbonos.FlatStyle = FlatStyle.Flat;
+            btnAbonos.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAbonos.ForeColor = Color.White;
+            btnAbonos.Location = new Point(104, 325);
+            btnAbonos.Name = "btnAbonos";
+            btnAbonos.Size = new Size(301, 59);
+            btnAbonos.TabIndex = 8;
+            btnAbonos.Text = "Abonos";
+            btnAbonos.UseVisualStyleBackColor = false;
             // 
             // Inicio
             // 
@@ -127,5 +142,6 @@
         private Button button1;
         private Button button3;
         private Panel panel1;
+        private Button btnAbonos;
     }
 }

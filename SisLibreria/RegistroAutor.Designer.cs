@@ -45,13 +45,13 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(45, 66, 91);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnRegistrarAtor);
             panel1.Controls.Add(TxtAutor);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, -3);
+            panel1.Location = new Point(2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(604, 204);
+            panel1.Size = new Size(600, 196);
             panel1.TabIndex = 0;
             // 
             // btnRegistrarAtor
@@ -94,9 +94,9 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnCerrar);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(0, 3);
+            panel2.Location = new Point(6, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(604, 50);
+            panel2.Size = new Size(596, 54);
             panel2.TabIndex = 0;
             // 
             // pictureBox1
@@ -115,7 +115,7 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrar.ForeColor = Color.White;
-            btnCerrar.Location = new Point(560, 9);
+            btnCerrar.Location = new Point(558, 9);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(31, 31);
             btnCerrar.TabIndex = 14;
@@ -139,6 +139,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(603, 199);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RegistroAutor";

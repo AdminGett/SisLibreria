@@ -88,26 +88,29 @@ namespace SisLibreria
         private void roundedButton1_Click(object sender, EventArgs e)
         {
             string xmlventa;
-            if (!string.IsNullOrWhiteSpace(txtMonetario.Text))
+
+            if (cbxAbono.Checked == true)
             {
-                    if (cbxAbono.Checked == true)
-                    {
-                        xmlventa = CrearXMLAbono();
-                }
-                    else if (cbxApartar.Checked == true)
-                    {
-                        xmlventa = CrearXMLAbono();
-                        //GuardarApartado(xmlventa);
-                    }
-                    else
-                    {
-                            xmlventa = crearXMLVenta();
-                            GuardaarVenta(xmlventa);
-                    }
+                xmlventa = crearXMLVenta();
+            }
+            else if (cbxApartar.Checked == true)
+            {
+                xmlventa = crearXMLVenta();
+                //GuardarApartado(xmlventa);
+                GuardarAbono(xmlventa);
+
             }
             else
             {
-                MessageBox.Show("Hay campos vacios.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!string.IsNullOrWhiteSpace(txtMonetario.Text))
+                {
+                    xmlventa = crearXMLVenta();
+                    GuardaarVenta(xmlventa);
+                }
+                else
+                {
+                    MessageBox.Show("Hay campos vacios.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -203,13 +206,33 @@ namespace SisLibreria
         }
         public string crearXMLVenta()
         {
-            JsonObject obj = new JsonObject
+            JsonObject obj = new JsonObject();
+            //if (cbxAbono.Checked == true)
+            //{
+            //    obj["Libros"] = JsonNode.Parse(JsonSerializer.Serialize(LibrosListaVEnta));
+            //    obj["Recibe"] = txtMonetario.Text;
+            //    obj["Cambio"] = lblVuelto.Text;
+            //    obj["Total"] = lbPresioNeto.Text;
+            //}
+            //else 
+            if (cbxApartar.Checked == true)
             {
-                ["Libros"] = JsonNode.Parse(JsonSerializer.Serialize(LibrosListaVEnta)),
-                ["Recibe"] = txtMonetario.Text,
-                ["Cambio"] = lblVuelto.Text,
-                ["Total"] = lbPresioNeto.Text
-            };
+                obj["Libros"] = JsonNode.Parse(JsonSerializer.Serialize(LibrosListaVEnta));
+                obj["IdVenta"] = lblTicket.Text;
+                obj["Nombre"] = TxtNombre.Text;
+                obj["Recibe"] = TxtResibeAbono.Text;
+                obj["Cambio"] = lblCambioAbono.Text;
+                obj["Total"] = lbPresioNeto.Text;
+
+            }
+            else
+            {
+                obj["Libros"] = JsonNode.Parse(JsonSerializer.Serialize(LibrosListaVEnta));
+                obj["Recibe"] = txtMonetario.Text;
+                obj["Cambio"] = lblVuelto.Text;
+                obj["Total"] = lbPresioNeto.Text;
+            }
+
 
             string json = obj.ToJsonString();
 
@@ -279,7 +302,7 @@ namespace SisLibreria
 
         private void lblEliminarElemento_MouseClick(object sender, MouseEventArgs e)
         {
-       
+
             if (dtVentas.SelectedRows.Count > 0)
             {
                 var listaEstandar = dtVentas.DataSource as List<ModeloVenta>;
@@ -304,35 +327,59 @@ namespace SisLibreria
                     Total = 0;
                     Total = listaEstandar.Sum(Pre => Convert.ToDecimal(Pre.Precio));
                     lbPresioNeto.Text = Total.ToString();
-                    if(decimal.TryParse(txtMonetario.Text, out decimal pago))
+                    if (decimal.TryParse(txtMonetario.Text, out decimal pago))
                     {
                         decimal devuelto = pago - Total;
                         lblVuelto.Text = devuelto.ToString();
                     }
-                  
+
                     if (dtVentas.Columns["Id"] != null)
                     {
                         dtVentas.Columns["Id"].Visible = false;
                     }
                 }
-               
+
             }
             else
             {
                 MessageBox.Show("No se ha seleccionado uno o mas libros", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-          
+
         }
 
         private void dtVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private string CrearXMLAbono()
+
+        private void TxtResibeAbono_TextChanged(object sender, EventArgs e)
         {
-            var resultado = "hola";
-            return resultado;
+            if (Total > 0)
+            {
+                if (decimal.TryParse(TxtResibeAbono.Text, out decimal pago))
+                {
+                    decimal devuelto = Total - pago;
+
+                    if (devuelto > 0)
+                    {
+                        lblCambioAbono.Text = devuelto.ToString();
+                    }
+                    else
+                    {
+                        lblVuelto.Text = "0";
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha iniciado una venta.", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+        private void GuardarAbono(string xmlventa)
+        {
+
         }
     }
 }
