@@ -152,7 +152,7 @@ namespace SisLibreria
                 {
 
 
-                    DataTable estatus = BusquedaProcesada.RegistrosLiterarios(AgregarLibro);
+                    DataTable estatus = BusquedaProcesada.RegistrosLiterariosVenta(AgregarLibro);
 
 
                     var LibroBuscado = estatus.AsEnumerable().Select(row => new ModeloVenta
@@ -378,6 +378,11 @@ namespace SisLibreria
 
         }
         private void GuardarAbono(string xmlventa)
+        {
+
+        }
+
+        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
 
         }

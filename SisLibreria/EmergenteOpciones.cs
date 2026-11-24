@@ -56,8 +56,22 @@ namespace SisLibreria
         {
             NuevoGenero Genero = new NuevoGenero();
             Genero.Show();
-            
+
             DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+            Configuraciones sistemas = new Configuraciones();
+            sistemas.Show();
+
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

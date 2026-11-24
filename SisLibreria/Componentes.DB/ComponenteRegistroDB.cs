@@ -1,5 +1,6 @@
 ﻿using MySqlX.XDevAPI;
 using SisLibreria.BConsultas;
+using SisLibreria.Components.System.Registro;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,17 +26,30 @@ namespace SisLibreria.Componentes.DB
         {
             return repo.EjecutarSP<DataTable>("tb_busqueda_R_Autores");
         }
+        public DataTable BuscaNombreAutor(string Autor)
+        {
+            return repo.EjecutarSP<DataTable>("tb_CatAutores_R_Autor",Autor);
+
+        }
         public DataTable BuscaGenero()
         {
             return repo.EjecutarSP<DataTable>("tb_busqueda_R_Generos");
         }
-        public int RegistroAuor(string Autor)
+        public DataTable RegistroAuor(string Autor)
         {
-            return repo.EjecutarSP<int>("tb_busqueda_I_Autor", Autor);
+            return repo.EjecutarSP<DataTable>("tb_busqueda_I_Autor", Autor);
         }
-        public int RegistroGenero(string Genreo)
+        public DataTable RegistroGenero(string Genreo)
         {
-            return repo.EjecutarSP<int>("tb_busqueda_I_Genero", Genreo);
+            return repo.EjecutarSP<DataTable>("tb_busqueda_I_Genero", Genreo);
+        }
+        public DataTable BusquedaGeneros(string valorBusqueda)
+        {
+            return repo.EjecutarSP<DataTable>("tb_CatGenero_R_ExisteGenero",valorBusqueda);
+        }
+        public int EliminarGenero(int id)
+        {
+            return repo.EjecutarSP<int>("tb_CatGenero_D_EliminarGenero", id);
         }
         public DataTable BuscaLibroVenta(string Busqueda)
         {
@@ -48,6 +62,14 @@ namespace SisLibreria.Componentes.DB
         public int NuevaVenta(string venta)
         {
             return repo.EjecutarSP<int>("tb_Libreria_Venta", venta);
+        }
+        public int EliminarAutor(int id)
+        {
+            return repo.EjecutarSP<int>("tb_CatAutores_EliminarAutor",id);
+        }
+        public DataTable RegistrosLiterariosVenta(string Busqueda)
+        {
+            return repo.EjecutarSP<DataTable>("tb_BuquedaCompuesta_R_Libros", Busqueda);
         }
         public void Dispose()
         {

@@ -63,9 +63,9 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(TxtLBucar);
             panel1.Controls.Add(TxtBusqueda);
-            panel1.Location = new Point(988, 48);
+            panel1.Location = new Point(993, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 482);
+            panel1.Size = new Size(257, 475);
             panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -168,7 +168,7 @@
             TxtBusqueda.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtBusqueda.Location = new Point(28, 53);
             TxtBusqueda.Name = "TxtBusqueda";
-            TxtBusqueda.Size = new Size(208, 27);
+            TxtBusqueda.Size = new Size(201, 27);
             TxtBusqueda.TabIndex = 0;
             TxtBusqueda.KeyDown += TxtBusqueda_KeyDown;
             // 
@@ -176,11 +176,12 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(45, 66, 91);
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(DtLibros);
-            panel2.Location = new Point(-4, -2);
+            panel2.Location = new Point(1, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1256, 535);
+            panel2.Size = new Size(1249, 529);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -190,9 +191,9 @@
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnCerrar);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(3, 3);
+            panel3.Location = new Point(3, -1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1253, 46);
+            panel3.Size = new Size(1244, 48);
             panel3.TabIndex = 1;
             // 
             // pictureBox1
@@ -264,7 +265,7 @@
             DtLibros.RowHeadersVisible = false;
             DtLibros.RowHeadersWidth = 51;
             DtLibros.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            DtLibros.Size = new Size(978, 449);
+            DtLibros.Size = new Size(969, 441);
             DtLibros.TabIndex = 0;
             DtLibros.CellContentClick += DtLibros_CellContentClick;
             // 
